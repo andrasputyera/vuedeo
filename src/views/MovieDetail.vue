@@ -1,13 +1,37 @@
 <template>
     <div class="movie-detail">
-        Detail {{ $route.params.id }}
+        <h2>{{ movie.Title }}</h2>
+        <p>{{ movie.Year }}</p>
+        <img :src="movie.Poster" alt="Movie Poster" class="featured-img">
+        <p>{{ movie.Plot }}</p>
+        
     </div>
 </template>
 
 <script>
-    export default {
-        
+import { ref, onBeforeMount } from 'vue';
+import { useRoute } from 'vue-router';
+import env from '@/env.js';
+
+export default {
+    setup() {
+        const movie = ref({});
+        const route = useRoute();
+
+        onBeforeMount(() => {
+            fetch(`http://www.omdbapi.com/?apikey=${env.apikey}&i=${route.params.id}&plot=short`)
+                .then(response => response.json())
+                .then(data => {
+                movie.value = data;
+            });
+        });
+
+        return {
+            movie
+        }
     }
+    
+}
 </script>
 
 <style lang="scss" scoped>
