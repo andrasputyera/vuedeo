@@ -110,9 +110,9 @@ export default {
       background: none;
     
       &[type="text"] {
-        width: 100%;
-        color: #FFF;
-        background-color: #719bc8;
+        width: 90%;
+        color: #3f556d;
+        background-color: #c6def9;
         font-size: 20px;
         padding: 10px 16px;
         border-radius: 8px;
@@ -120,7 +120,7 @@ export default {
         transition: 0.4s;
         
         &::placeholder {
-          color: #f3f3f3;
+          color: #3f556d;
         }
 
         &:focus {
@@ -133,7 +133,7 @@ export default {
         max-width: 300px;
         background-color: #01ae72;
         padding: 16px;
-        border-radius: 8px;
+        border-radius: 30px;
         color: #FFF;
         font-size: 20px;
         text-transform: uppercase;
@@ -143,6 +143,62 @@ export default {
           background-color: rgb(30, 98, 82);
         }
       }
+    }
+  }
+
+  .movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 8px;
+
+    .movie {
+      max-width: 50%;
+      flex: 1 1 50%;
+      padding: 16px 8px;
+
+      .movie-link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        
+        .product-image {
+          position: relative;
+          display: block;
+          
+          img {
+            display: block;
+            width: 100%;
+            height: 275px;
+            object-fit: cover;
+          }
+          
+          .type {
+            position: absolute;
+            padding: 8px 16px;
+            background-color: #42B883;
+            color: #FFF;
+            bottom: 16px;
+            left: 0px;
+            text-transform: capitalize;
+          }
+        }
+
+        .detail {
+          background-color: #496583;
+          padding: 16px 8px;
+          flex: 1 1 100%;
+          border-radius: 0px 0px 8px 8px;
+          .year {
+            color: #AAA;
+            font-size: 14px;
+          }
+          h3 {
+            color: #FFF;
+            font-weight: 600;
+            font-size: 18px;
+          }
+        }
+      }  
     }
   }
 }
