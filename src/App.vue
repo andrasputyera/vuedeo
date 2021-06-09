@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <header>
     <router-link to="/">
       <h1><span>Vue</span>deo</h1>
@@ -6,6 +7,15 @@
   </header>
   <router-view/>
 </template>
+
+<script>
+import Navbar from '@/components/Navbar.vue'
+
+export default {
+    components: { Navbar }
+}
+</script>
+
 
 <style lang="scss">
 * {
