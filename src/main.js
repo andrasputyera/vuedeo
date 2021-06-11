@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import firebase from 'firebase'
 
+// Global styles
+import '@/assets/main.css'
+
 const firebaseConfig = {
     apiKey: "AIzaSyD6-U7VPCj_QSQv4zwbmRtyfRTHZQ9aCSU",
     authDomain: "vue-3-vuedeo.firebaseapp.com",
